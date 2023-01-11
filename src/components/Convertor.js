@@ -4,7 +4,6 @@ export default function Convertor() {
   const [color, setInputColor] = useState("");
 
   const handleCahnge = (event) => {
-    debugger;
     const colorIn = event.target.value;
     if (colorIn.length === 7) {
       if (/#[a-f0-9]{6}/gi.exec(colorIn)) {
@@ -30,7 +29,12 @@ export default function Convertor() {
     >
       <div className='containier'>
         <form className='form'>
-          <input className='colorIn' type='text' onChange={handleCahnge} />
+          <input
+            className='colorIn'
+            type='text'
+            onChange={handleCahnge}
+            placeholder='Введите код цвета: #123456'
+          />
         </form>
         <div className='colorOut' type='text' readOnly>
           {color}
